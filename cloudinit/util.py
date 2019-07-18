@@ -650,12 +650,11 @@ def system_info():
         'release': platform.release(),
         'python': platform.python_version(),
         'uname': platform.uname(),
-        'dist': 'unknown'
+        'dist': get_linux_distro()
     }
     system = info['system'].lower()
     var = 'unknown'
     if system == "linux":
-        info['dist']=get_linux_distro()
         linux_dist = info['dist'][0].lower()
         if linux_dist in ('centos', 'debian', 'fedora', 'rhel', 'suse'):
             var = linux_dist
