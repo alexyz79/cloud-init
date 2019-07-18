@@ -548,7 +548,7 @@ def is_ipv4(instr):
 
 
 def is_FreeBSD():
-    return system_info()['variant'] == "freebsd"
+    return system_info()['variant'].lower() == "freebsd"
 
 
 def get_cfg_option_bool(yobj, key, default=False):
